@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>board</title>
+</head>
+<body>
+	<form method="POST" action="/threads">
+		{{.error}}
+		<p>スレッドタイトル: <input type="text" name="title"></p>
+		<p>名前: <input type="text" name="username"></p>
+		<p><textarea style="min-width: 40em; height: 10.0em; white-space:pre-wrap; word-wrap:break-word;" rows="4" cols="12" name="message"></textarea></p>
+		<p><input type="submit" value="新規スレッド作成" /></p>
+	</form>
+	<table>
+		<tbody>
+			{{ range .threads}}
+			<tr>
+				<td><a href="/threads/{{.ThreadId}}">{{.Title}}</a></td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>board</title>
+</head>
+<body>
+	<form method="POST" action="/threads/{{.threadId}}/responses">
+	<h2>{{.title}}</h2>
+	<table>
+		<tbody>
+			{{ range .responses}}
+			<tr>
+				<td>{{.ResNo}} </td>
+				<td>{{.UserName}}</td>
+				<td>{{.CreatedAt}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>{{.ResponseMessage}}</p>
+	{{end}}
+		<p><input type="hidden" name="threadid" value={{.threadId}}></p>
+		<p>名前: <input type="text" name="username"></p>
+		<p><textarea style="min-width: 40em; height: 10.0em; word-wrap:break-word;" rows="4" cols="12" name="message"></textarea></p>
+		<p><input type="submit" value="書き込む"></p>
+		{{.error}}
+		<p>現在のレス数{{.qty}}</p>
+	</form>
+<p><a href="/">板一覧</a></p>
+</body>
+</html>
