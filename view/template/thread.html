@@ -17,11 +17,12 @@
 			</tr>
 		</tbody>
 	</table>
-	<p>{{.ResponseMessage}}</p>
+	<p style="white-space:pre-wrap">{{.ResponseMessage}}</p>
 	{{end}}
 		<p><input type="hidden" name="threadid" value={{.threadId}}></p>
 		<p>名前: <input type="text" name="username"></p>
-		<p><textarea style="min-width: 40em; height: 10.0em; word-wrap:break-word;" rows="4" cols="12" name="message"></textarea></p>
+		<p><textarea style="min-width: 40em; height: 10.0em; word-wrap:break-word;" 
+			rows="4" cols="12" name="message"></textarea></p>
 		<p><input type="submit" value="書き込む"></p>
 		{{.error}}
 		<p>現在のレス数{{.qty}}</p>

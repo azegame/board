@@ -17,7 +17,7 @@ func indexPage(c *gin.Context) {
 	}
 
     c.HTML(200, "index.html", gin.H{
-    	"threads": allThreads
+    	"threads": allThreads,
     })
 }
 
@@ -79,11 +79,11 @@ func createThread(c *gin.Context) {
 		fmt.Println(err)
 	}
 
-    c.HTML(200, "thread.html", gin.H{
-    	"title": threadTitle,
-    	"responses": responses,
-    	"threadId": threadId,
-    	"qty": resQty,
+	c.HTML(200, "thread.html", gin.H{
+   		"title": threadTitle,
+   		"responses": responses,
+   		"threadId": threadId,
+   		"qty": resQty,
     })
 }
 
