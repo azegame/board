@@ -1,8 +1,6 @@
 package repository
 
 import (
-	//"fmt"
-
 	 _ "github.com/mattn/go-sqlite3"
 
 	 "board/model/entity"

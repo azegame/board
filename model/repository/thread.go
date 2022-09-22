@@ -1,8 +1,6 @@
 package repository
 
 import (
-	//"fmt"
-
 	 _ "github.com/mattn/go-sqlite3"
 
 	 "board/model/entity"
@@ -57,7 +55,8 @@ func GetAllThreads() ([]entity.Thread, error) {
 	var threads []entity.Thread
 	rows, err := db.Query(
 		`SELECT
-		 	thread_id, title
+		 	thread_id,
+		 	title
 		 FROM
 		 	threads
 		 ORDER BY

@@ -84,7 +84,7 @@ func createThread(c *gin.Context) {
    		"responses": responses,
    		"threadId": threadId,
    		"qty": resQty,
-    })
+	})
 }
 
 
@@ -164,12 +164,12 @@ func postResponse(c *gin.Context) {
 		fmt.Println(err)
 	}
 
-    c.HTML(200, "thread.html", gin.H{
-    	"title": threadTitle,
-    	"responses": responses,
-    	"threadId": threadId,
-    	"qty": resNo,
-    })
+	c.HTML(200, "thread.html", gin.H{
+		"title": threadTitle,
+		"responses": responses,
+		"threadId": threadId,
+		"qty": resNo,
+	})
 }
 
 
